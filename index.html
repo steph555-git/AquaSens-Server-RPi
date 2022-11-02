@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+    <title>Connexion AquaSens</title>
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <div>
+            <a href='index.html'>AquaSens</a>
+        
+    </div>
+</header>
+
+    <div class="full-page">
+           
+        <div id="login-form" class="login-page">
+        
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" onclick="login()" class="toggle-btn">Connexion</button>
+                <button type="button" onclick="register()" class="toggle-btn">Inscription</button>
+                </div>
+              <!--FORMULAIRE CONNEXION-->  
+            <form id="login" class="input-group-login" action="/connexion" method="post">
+                <input type="email" id="email" class="input-field" placeholder="Email" required>
+                <input type="password" id="password" class="input-field" placeholder="password" required>
+                <button type="submit" id="submit" class="submit-btn">Connexion</button>
+            </form>
+
+            <!--FORMULAIRE INSCRIPTION-->  
+            <form id="register" class="input-group-register" action="/inscription" method="post">
+                <input type="text" class="input-field" placeholder="Nom d'utilisateur" required>
+                <input type="email" class="input-field" placeholder="Email" required>
+                <input type="password" class="input-field" placeholder="password" required>
+                <button type="submit" class="submit-btn">Inscription</button>
+            </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        var x=document.getElementById('login');
+		var y=document.getElementById('register');
+		var z=document.getElementById('btn');
+		function register()
+		{
+			x.style.left='-300px';
+			y.style.left='50px';
+			z.style.left='110px';
+		}
+		function login()
+		{
+			x.style.left='50px';
+			y.style.left='450px';
+			z.style.left='0px';
+		}
+	</script>
+	
+</body>
+</html>
