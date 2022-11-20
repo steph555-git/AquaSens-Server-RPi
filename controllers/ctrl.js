@@ -15,7 +15,7 @@ const { restart } = require('nodemon')
 
 exports.inscription = (req, res )=> {
 
-    // Recuperation des données
+    // Recuperation des données d'inscription
     const {body} = req
 
     //Validation des données
@@ -24,16 +24,17 @@ exports.inscription = (req, res )=> {
 
     //hash du mdp - crypter le mot de passe avant de la mettre en base
     bcrypt.hash(body.password, 10)
-    .then(hash => {
-        if(!hash) return res.status(500).json({msg: "Server erreur"})
+        .then(hash => {
+            if(!hash) return res.status(500).json({msg: "Server erreur"})
 
         delete body.password
         new User({...body, password : hash})
         .save()
+
         .then((user) => {
             console.log(user)
             res.status(201).json({msg: "Utilisateur créé"}) 
-            res.redirect('pages/inscriptionOK.html')
+            //res.redirect('pages/inscriptionOK.html')
         })
         .catch((error) => res.status(500).json(error))
 
@@ -49,6 +50,7 @@ exports.inscription = (req, res )=> {
  */
 
 exports.connexion = (req, res )=> {
+    //Recuperation des données de connexion
     const {email,password} = req.body
     //validation des données
     const {error} = userValidation(req.body).userValidationLogin
@@ -56,11 +58,11 @@ exports.connexion = (req, res )=> {
 
     //trouver le bon user dans la BDD
     User.findOne({email : email})
-    .then (user => {
-        if(!user) return res.status(404).json({msg : "L'utilisateur n'existe pas"})
-     
+        .then (user => {
+            if(!user) return res.status(404).json({msg : "L'utilisateur n'existe pas"})
         // Verification du MDP
         bcrypt.compare(password, user.password)
+
         .then(match => {
             if(!match) return res.status(500).json({msg : "Server error"})
             res.status(200).json({
