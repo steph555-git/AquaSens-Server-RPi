@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Dashio - Bootstrap Admin Template</title>
+  <title>AquaSens - Profil utilisateur</title>
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
@@ -40,7 +40,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="index.html" class="logo"><b>DASH<span>IO</span></b></a>
+      <a href="index.html" class="logo"><b>AQUA<span>SENS</span></b></a>
       <!--logo end-->
       <div class="nav notify-row" id="top_menu">
         <!--  notification start -->
@@ -389,8 +389,7 @@
                 <div class="profile-pic">
                   <p><img src="img/ui-sam.jpg" class="img-circle"></p>
                   <p>
-                    <button class="btn btn-theme"><i class="fa fa-check"></i> Follow</button>
-                    <button class="btn btn-theme02">Add</button>
+                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
                   </p>
                 </div>
               </div>
@@ -404,13 +403,13 @@
               <div class="panel-heading">
                 <ul class="nav nav-tabs nav-justified">
                   <li class="active">
-                    <a data-toggle="tab" href="#overview">Overview</a>
+                    <a data-toggle="tab" href="#overview">Installation</a>
                   </li>
                   <li>
-                    <a data-toggle="tab" href="#contact" class="contact-map">Contact</a>
+                    <a data-toggle="tab" href="#contact" class="contact-map">Gestion des capteurs</a>
                   </li>
                   <li>
-                    <a data-toggle="tab" href="#edit">Edit Profile</a>
+                    <a data-toggle="tab" href="#edit">Edition du Profile</a>
                   </li>
                 </ul>
               </div>
@@ -418,44 +417,99 @@
               <div class="panel-body">
                 <div class="tab-content">
                   <div id="overview" class="tab-pane active">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <textarea rows="3" class="form-control" placeholder="Whats on your mind?"></textarea>
-                        <div class="grey-style">
-                          <div class="pull-left">
-                            <button class="btn btn-sm btn-theme"><i class="fa fa-camera"></i></button>
-                            <button class="btn btn-sm btn-theme"><i class="fa fa-map-marker"></i></button>
-                          </div>
-                          <div class="pull-right">
-                            <button class="btn btn-sm btn-theme03">POST</button>
-                          </div>
-                        </div>
+                    
+                      <div class="col-md-6 detailed">
+                        
                         <div class="detailed mt">
-                          <h4>Recent Activity</h4>
-                          <div class="recent-activity">
-                            <div class="activity-icon bg-theme"><i class="fa fa-check"></i></div>
-                            <div class="activity-panel">
-                              <h5>1 HOUR AGO</h5>
-                              <p>Purchased: Dashio Admin Panel & Front-end theme.</p>
-                            </div>
-                            <div class="activity-icon bg-theme02"><i class="fa fa-trophy"></i></div>
-                            <div class="activity-panel">
-                              <h5>5 HOURS AGO</h5>
-                              <p>Task Completed. Resolved issue with Disk Space.</p>
-                            </div>
-                            <div class="activity-icon bg-theme04"><i class="fa fa-rocket"></i></div>
-                            <div class="activity-panel">
-                              <h5>3 DAYS AGO</h5>
-                              <p>Launched a new product: Flat Pack Heritage.</p>
-                            </div>
+                          <h4>Mon installation</h4>
+                          
+                          <div class="form-panel">
+                            <h3><i class="fa fa-angle-right"></i> Taille du bassin</h3>
+                            <form class="form-horizontal style-form" method="get">
+                              <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Longueur</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" placeholder="Longueur du bassin en cm">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Largeur</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" placeholder="Largeur du bassin en cm">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Profondeur</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" placeholder="Profondeur du bassin en cm">
+                                </div>
+                              </div>
+                              
+                                <button class="btn btn-theme" type="submit">Sauvegarder</button>
+
+                            </form>
                           </div>
+                          <div class="form-panel">
+                            <h3><i class="fa fa-angle-right"></i> Filtration biologique</h3>
+                            <form class="form-horizontal style-form" method="get">
+                              <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Longueur</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" placeholder="Longueur en cm">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Largeur</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" placeholder="Largeur en cm">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Profondeur</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" placeholder="Profondeur en cm">
+                                </div>
+                              </div>
+                              
+                                <button class="btn btn-theme" type="submit">Sauvegarder</button>
+
+                            </form>
+                          </div>
+
+                          <div class="form-panel">
+                            <h3><i class="fa fa-angle-right"></i> Materiel</h3>
+                            <form class="form-horizontal style-form" method="get">
+                              <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Pompe à eau</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" placeholder="Marque et modèle">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Filtre </label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" placeholder="Type de filtre et modèle">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Pompe à air</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" placeholder="Marque et modèle">
+                                </div>
+                              </div>
+                              
+                                <button class="btn btn-theme" type="submit">Sauvegarder</button>
+
+                            </form>
+                          </div>
+
                           <!-- /recent-activity -->
                         </div>
                         <!-- /detailed -->
                       </div>
                       <!-- /col-md-6 -->
                       <div class="col-md-6 detailed">
-                        <h4>User Stats</h4>
+                        <h4>Production de poisson</h4>
                         <div class="row centered mt mb">
                           <div class="col-sm-4">
                             <h1><i class="fa fa-money"></i></h1>
@@ -474,49 +528,16 @@
                           </div>
                         </div>
                         <!-- /row -->
-                        <h4>My Friends</h4>
+                        <h4>Notifications</h4>
                         <div class="row centered mb">
-                          <ul class="my-friends">
-                            <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-01.jpg"></div>
-                            </li>
-                            <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-02.jpg"></div>
-                            </li>
-                            <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-03.jpg"></div>
-                            </li>
-                            <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-04.jpg"></div>
-                            </li>
-                            <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-05.jpg"></div>
-                            </li>
-                            <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-06.jpg"></div>
-                            </li>
-                            <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-07.jpg"></div>
-                            </li>
-                            <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-08.jpg"></div>
-                            </li>
-                            <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-09.jpg"></div>
-                            </li>
-                            <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-10.jpg"></div>
-                            </li>
-                            <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-11.jpg"></div>
-                            </li>
-                          </ul>
-                          <div class="row mt">
-                            <div class="col-md-4 col-md-offset-4">
-                              <h6><a href="#">VIEW ALL</a></h6>
-                            </div>
-                          </div>
+                          
+                         
+
+
+
+
                         </div>
+                      </div>
                         <!-- /row -->
                         <h4>Pending Tasks</h4>
                         <div class="row centered">
@@ -551,123 +572,141 @@
                         <!-- /row -->
                       </div>
                       <!-- /col-md-6 -->
-                    </div>
+                    
                     <!-- /OVERVIEW -->
                   </div>
                   <!-- /tab-pane -->
                   <div id="contact" class="tab-pane">
                     <div class="row">
-                      <div class="col-md-6">
-                        <div id="map"></div>
+                      <div class="content-panel">
+                        <table class="table table-striped table-advance table-hover">
+                          <h4><i class="fa fa-angle-right"></i> Liste des capteurs de température</h4>
+                          <hr>
+                          <thead>
+                            <tr>
+                              <th><i class="fa fa-bullhorn"></i> Nom du capteur</th>
+                              <th class="hidden-phone"><i class="fa fa-question-circle"></i> Descrition</th>
+                              <th><i class="fa fa-bookmark"></i> ID du capteur</th>
+                              <th><i class=" fa fa-edit"></i> Statut</th>
+                              <th></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><a href="basic_table.html#">Bassin</a></td>
+                              <td class="hidden-phone">Capteur du bassin principal</td>
+                              <td>28-25c26a54d3e8</td>
+                              <td><span class="label label-success label-mini">OK</span></td>
+                              <td>
+                                <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a href="basic_table.html#">Exterieur</a></td>
+                              <td class="hidden-phone">Capteur exterieur</td>
+                              <td>28-25c269ff10b5</td>
+                              <td><span class="label label-success label-mini">OK</span></td>
+                              <td>
+                                <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a href="basic_table.html#">Serre</a></td>
+                              <td class="hidden-phone">Capteur sous la serre</td>
+                              <td>28-25c26aff5dfc</td>
+                              <td><span class="label label-success label-mini">OK</span></td>
+                              <td>
+                                <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                              </td>
+                            </tr>
+                            
+                          </tbody>
+                        </table>
                       </div>
-                      <!-- /col-md-6 -->
-                      <div class="col-md-6 detailed">
-                        <h4>Location</h4>
-                        <div class="col-md-8 col-md-offset-2 mt">
-                          <p>
-                            Postal Address<br/> PO BOX 12988, Sutter Ave<br/> Brownsville, New York.
-                          </p>
-                          <br>
-                          <p>
-                            Headquarters<br/> 844 Sutter Ave,<br/> 9003, New York.
-                          </p>
-                        </div>
-                        <h4>Contacts</h4>
-                        <div class="col-md-8 col-md-offset-2 mt">
-                          <p>
-                            Phone: +33 4898-4303<br/> Cell: 48 4389-4393<br/>
-                          </p>
-                          <br>
-                          <p>
-                            Email: hello@dashiotheme.com<br/> Skype: UseDashio<br/> Website: http://Alvarez.is
-                          </p>
-                        </div>
-                      </div>
-                      <!-- /col-md-6 -->
-                    </div>
                     <!-- /row -->
+                    </div>
                   </div>
                   <!-- /tab-pane -->
                   <div id="edit" class="tab-pane">
                     <div class="row">
                       <div class="col-lg-8 col-lg-offset-2 detailed">
-                        <h4 class="mb">Personal Information</h4>
+                        <textarea rows="3" class="form-control" placeholder="Une brève déscription de vous et/ou de votre installation"></textarea>
+                        <div class="grey-style">
+                          
+                          <div class="pull-right">
+                            <button class="btn btn-sm btn-theme03">Valider</button>
+                          </div>
+                        </div>
+                        <h4 class="mb">Information Personnelle</h4>
                         <form role="form" class="form-horizontal">
                           <div class="form-group">
-                            <label class="col-lg-2 control-label"> Avatar</label>
+                            <label class="col-lg-2 control-label"> Photo de profil</label>
                             <div class="col-lg-6">
                               <input type="file" id="exampleInputFile" class="file-pos">
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-lg-2 control-label">Company</label>
+                            <label class="col-lg-2 control-label">Date d'arrivée</label>
                             <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="c-name" class="form-control">
+                              <!--<input type="date" placeholder="Date d'entrée dans l'asso AdaNat" id="c-name" -->
+                                <input class="form-control form-control-inline input-medium default-date-picker" size="16" type="date" value="">
+
+                              <class="form-control">
                             </div>
                           </div>
+                          
                           <div class="form-group">
-                            <label class="col-lg-2 control-label">Lives In</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="lives-in" class="form-control">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Country</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="country" class="form-control">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Description</label>
+                            <label class="col-lg-2 control-label">Description </label>
                             <div class="col-lg-10">
-                              <textarea rows="10" cols="30" class="form-control" id="" name=""></textarea>
+                              <textarea rows="4" cols="30" class="form-control" id="" name=""></textarea>
                             </div>
                           </div>
                         </form>
                       </div>
                       <div class="col-lg-8 col-lg-offset-2 detailed mt">
-                        <h4 class="mb">Contact Information</h4>
+                        <h4 class="mb">Contact Personnel</h4>
                         <form role="form" class="form-horizontal">
                           <div class="form-group">
-                            <label class="col-lg-2 control-label">Address 1</label>
+                            <label class="col-lg-2 control-label">Adresse 1</label>
                             <div class="col-lg-6">
                               <input type="text" placeholder=" " id="addr1" class="form-control">
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-lg-2 control-label">Address 2</label>
+                            <label class="col-lg-2 control-label">Adresse 2</label>
                             <div class="col-lg-6">
                               <input type="text" placeholder=" " id="addr2" class="form-control">
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-lg-2 control-label">Phone</label>
+                            <label class="col-lg-2 control-label">Ville</label>
+                            <div class="col-lg-6">
+                              <input type="text" placeholder=" " id="lives-in" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Pays</label>
+                            <div class="col-lg-6">
+                              <input type="text" placeholder=" " id="country" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Téléphone</label>
                             <div class="col-lg-6">
                               <input type="text" placeholder=" " id="phone" class="form-control">
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-lg-2 control-label">Cell</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="cell" class="form-control">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Email</label>
+                            <label class="col-lg-2 control-label">E-mail</label>
                             <div class="col-lg-6">
                               <input type="text" placeholder=" " id="email" class="form-control">
                             </div>
                           </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Skype</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="skype" class="form-control">
-                            </div>
-                          </div>
+                          
                           <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
-                              <button class="btn btn-theme" type="submit">Save</button>
-                              <button class="btn btn-theme04" type="button">Cancel</button>
+                              <button class="btn btn-theme" type="submit">Sauvegarder</button>
+                              <button class="btn btn-theme04" type="button">Annuler</button>
                             </div>
                           </div>
                         </form>
@@ -696,7 +735,7 @@
     <footer class="site-footer">
       <div class="text-center">
         <p>
-          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
+          &copy; Copyrights <strong>AquaSens</strong>. All Rights Reserved
         </p>
         <div class="credits">
           <!--
