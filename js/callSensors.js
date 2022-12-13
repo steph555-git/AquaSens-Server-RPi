@@ -1,22 +1,36 @@
 const ds18b20 = require('ds18b20');
+const getTemperature = require('./getTemperature');
 
 
-function getSensorsList() {
+//function getSensorsList() {
     ds18b20.sensors((err, ids) => {
         var sensorsListTab = []
 
             for (var i=0; i < ids.length ; i++){
         
-                let sensorsObj = new Object
-                sensorsObj.name = "capteur " + i
-                sensorsObj.description = ""
-                sensorsObj.idSensor = ids[i]
 
-                //ajout du nouvel obj dans le tableau sensorsListTab
+                var sensorsObj = new Object()
+                    sensorsObj.date = Date.now()
+                    sensorsObj.name = "capteur " + i
+                    sensorsObj.description = ""
+                    sensorsObj.id = ids[i]
+                    sensorsObj.temperature = getTemperature(ids[i])
+
+                //Add new object{sensorsObj} in array[sensorsListTab]
                 sensorsListTab.push(sensorsObj)
             }
-            console.log(sensorsListTab)
-      })
-}
 
-//exports.module = getSensorsList
+            console.log(sensorsListTab)
+            return sensorsListTab
+
+        
+    })
+
+
+//}
+
+
+//getSensorsList()
+
+
+//module.exports = getSensorsList

@@ -1,10 +1,12 @@
 const ds18b20 = require('ds18b20');
 
 
-function getTemperature() {
+function getTemperature(idSensor) {
 
-    console.log(ds18b20.temperatureSync(idSensor))
-
+    temp = ds18b20.temperatureSync(idSensor)
+    return temp
 }
+
+module.exports = getTemperature
 
 
