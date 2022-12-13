@@ -22,6 +22,11 @@ app.use(flash())
 const User = require("./models/user")
 const Reset = require("./models/reset")
 
+//Gestion de toutes les routes (Non authentification)
+const routes = require('./routes/routes')
+app.use(routes)
+
+
 // Gestion des sessions
 app.use(session({
     secret: "mysecret",
@@ -68,6 +73,30 @@ app.get("/",(req,res) => {
     res.sendFile(__dirname + "/Dashio/login.html")
 })
 
+app.post("/", (req,res) =>{
+    const user = new User({
+        username: req.body.username,
+        password: req.body.password
+    })
+ 
+    req.login(user, (err) =>{
+        if(err){
+            res.status(401).send({ error: 'Probleme dauthorisation' })
+            //console.log(err)
+            //console.log("Probleme d'authorisation")  //pourquoi ce console.g ne s'affiche pas ??
+            //req.flash("error", "email ou mot de passe incorrect")
+            //res.sendFile(__dirname + "/Dashio/login.html")
+        } else {
+            passport.authenticate("local")(req,res,() => {
+                console.log("Utilisateur [" + req.body.username + "] authentifié")
+                req.flash("success", "Connexion OK "+ req.body.username)
+                res.sendFile(__dirname + "/Dashio/dashboard.html")
+                
+            })
+        }
+    })
+})
+   
 app.get("/register", (req,res) =>{
     res.sendFile(__dirname + "/Dashio/register.html")
 })
@@ -94,30 +123,6 @@ app.post("/register.html", (req,res) =>{
             })
         }
     })
-})
-     
-
-app.post("/", (req,res) =>{
-   const user = new User({
-       username: req.body.username,
-       password: req.body.password
-   })
-
-   req.login(user, (err) =>{
-       if(err){
-           console.log(err)
-           console.log("Probleme d'authorisation")  //pourquoi ce console.g ne s'affiche pas ??
-           req.flash("error", "email ou mot de passe incorrect")
-           res.sendFile(__dirname + "/Dashio/login.html")
-       } else {
-           passport.authenticate("local")(req,res,() => {
-               console.log("Utilisateur [" + req.body.username + "] authentifié")
-               req.flash("success", "Connexion OK "+ req.body.username)
-               res.sendFile(__dirname + "/Dashio/dashboard.html")
-               
-           })
-       }
-   })
 })
 
 app.get("/dashboard", isLoggedIn, (req, res)=>{
