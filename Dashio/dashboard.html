@@ -370,7 +370,7 @@
           <div class="col-lg-9 main-chart">
             <!--CUSTOM CHART START -->
             <div class="border-head">
-              <h3>USER VISITS</h3>
+              <h3>TEMPERATURES</h3>
             </div>
             <div class="custom-bar-chart">
               <ul class="y-axis">
@@ -382,6 +382,7 @@
                 <li><span>0</span></li>
               </ul>
               <div class="bar">
+                
                 <div class="title">JAN</div>
                 <div class="value tooltips" data-original-title="8.500" data-toggle="tooltip" data-placement="top">85%</div>
               </div>
@@ -631,7 +632,7 @@
               RIGHT SIDEBAR CONTENT
               *********************************************************************************************************************************************************** -->
           <div class="col-lg-3 ds">
-            <!--COMPLETED ACTIONS DONUTS CHART-->
+            <!--COMPLETED ACTIONS DONUTS CHART
             <div class="donut-main">
               <h4>COMPLETED ACTIONS & PROGRESS</h4>
               <canvas id="newchart" height="130" width="130"></canvas>
@@ -647,17 +648,16 @@
                 ];
                 var myDoughnut = new Chart(document.getElementById("newchart").getContext("2d")).Doughnut(doughnutData);
               </script>
-            </div>
+            </div>-->
             <!--NEW EARNING STATS -->
             <div class="panel terques-chart">
               <div class="panel-body">
                 <div class="chart">
                   <div class="centered">
-                    <span>TODAY EARNINGS</span>
-                    <strong>$ 890,00 | 15%</strong>
+                    <h4>TODAY EARNINGS</h4>
                   </div>
                   <br>
-                  <div class="sparkline" data-type="line" data-resize="true" data-height="75" data-width="90%" data-line-width="1" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="4" data-data="[200,135,667,333,526,996,564,123,890,564,455]"></div>
+                  <div class="sparkline" data-type="bar" data-resize="true" data-height="75" data-width="90%" data-line-width="1" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="4" data-data="[280,350,667,333]"></div>
                 </div>
               </div>
             </div>

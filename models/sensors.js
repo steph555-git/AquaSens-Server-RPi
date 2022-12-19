@@ -2,9 +2,10 @@ const mongoose = require('mongoose')
 const passportLocalStrategy = require('passport-local-mongoose')
 
 const sensorsSchema = new mongoose.Schema({
+    idSensors: String,
+    date: String,
     name: String,
     description: String,
-    idSensors: String,
     userId: Number
 })
 

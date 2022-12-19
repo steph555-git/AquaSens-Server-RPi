@@ -3,6 +3,7 @@ const router = Router()
 
 const Installation = require('../models/installation')
 const bodyParser = require('body-parser')
+const dotenv = require('dotenv'); dotenv.config()
 const flash = require('connect-flash')
 //initialisation de flash
 router.use(flash())
@@ -20,14 +21,15 @@ router.use(bodyParser.urlencoded({extended:false}))
 router.post("/profile.html",(req,res,next) => {
     
     const installation = new Installation({
-        ...req.body
+        ...req.body,
+        user: req.user
     }) 
 
-    //console.log(installation)
+    console.log(installation)
     //res.status(201).json({message : 'Installation enregistrée'})
-    installation.save()
-        .then(() => res.status(201).json({message : 'Installation enregistrée'}))
-        .catch((error) => res.status(400).json({error}))
+    //installation.save()
+    //    .then(() => res.status(201).json({message : 'Installation enregistrée'}))
+    //    .catch((error) => res.status(400).json({error}))
 })
 
 function isLoggedIn(req,res,next){

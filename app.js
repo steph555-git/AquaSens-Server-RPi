@@ -1,3 +1,4 @@
+const http = require('http')
 const express = require('express')
 const app = express()
 app.use(express.json())
@@ -12,6 +13,9 @@ const nodeMailer = require('nodemailer')
 const session = require('express-session')
 const passport = require('passport')
 const passportLocalMongoose = require('passport-local-mongoose')
+
+const dotenv = require('dotenv'); dotenv.config()
+const passovh = process.env.PASSWORD_MAILOVH
 
 const methodOverride = require('method-override')
 const flash = require('connect-flash')
@@ -159,7 +163,7 @@ app.post("/forgot.html", (req,res)=>{
                 secure: true,
                 auth: {
                     user:'horlogerie@alabonneheure.fr',
-                    pass: 'AdamTali5'},
+                    pass: passovh},
                 tls: {
                     rejectUnauthorized: false,
                       },
@@ -253,3 +257,4 @@ function isLoggedIn(req,res,next){
 app.listen(3000, (req,res) => {
     console.log("Connexion au serveur sur le port 3000 : OK")
 })
+
