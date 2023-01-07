@@ -11,18 +11,17 @@ function getSensorsList() {
             }
             const sensorsListTab = ids.map((id, i) => {
                 return {
-                    id: id,
-                    date: formatDate(new Date()),
-                    name: "capteur " + i,
-                    description: "Capteur temperature //bassin/exterieur/serre",
-                    temperature: getTemperature(id),
+                    "date": formatDate(new Date()),
+                    "id": id,
+                    "name": "capteur " + i,
+                    "description": "Capteur temperature bassin-exterieur-bassin",
+                    "temperature": getTemperature(id)
                 }
             })
             resolve(sensorsListTab)
         })
     })
 }
-
 
 function padTo2Digits(num) {
     return num.toString().padStart(2, '0')
@@ -38,11 +37,11 @@ function formatDate(date) {
 
 
 
-(async () => {
-    //date format DD/MM/YY
-    formatDate(new Date())
-    const res = await getSensorsList()
-    console.log("res :: ", res);
-})()
+//(async () => {
+//    //date format DD/MM/YY
+//    formatDate(new Date())
+//    const res = await getSensorsList()
+//    console.log("res :: ", res);
+//})()
 
 module.exports = getSensorsList

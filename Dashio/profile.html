@@ -248,7 +248,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Sam Soffes</h5>
+          <h5 class="centered">Prenom Nom</h5>
           <li class="mt">
             <a href="dashboard.html">
               <i class="fa fa-dashboard"></i>
@@ -383,7 +383,7 @@
               </div>
               <!-- /col-md-4 -->
               <div class="col-md-4 profile-text">
-                <h3>Sam Soffes</h3>
+                <h3>Prenom Nom</h3>
                 <h6>Main Administrator</h6>
                 <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
                   classical Latin literature from 45 BC.</p>
@@ -412,7 +412,7 @@
                     <a data-toggle="tab" href="#installation">Installation</a>
                   </li>
                   <li>
-                    <a data-toggle="tab" href="#capteurs" class="contact-map">Gestion des capteurs</a>
+                    <a data-toggle="tab" href="#capteurs">Gestion des capteurs</a>
                   </li>
                   <li>
                     <a data-toggle="tab" href="#editProfile">Edition du Profile</a>
@@ -584,14 +584,15 @@
                             <h4><i class="fa fa-angle-right"></i> Liste des capteurs de température</h4>
                           </div>
                           <!--BOUTON D'ANALYSE DES CAPTEURS-->
-                          <div class="an2"><button id="analyse" class="btn btn-theme" onclick="analyse()">Analyser</button>
+                          <div class="an2"><button id="analyse" class="btn btn-theme"
+                              onclick="analyse()">Analyser</button>
                           </div><br>
                           <thead>
                             <tr>
                               <th><i class="fa fa-calendar"></i> Date</th>
+                              <th><i class="fa fa-bookmark"></i> ID du capteur</th>
                               <th><i class="fa fa-bullhorn"></i> Nom du capteur</th>
                               <th><i class="fa fa-question-circle"></i> Descrition</th>
-                              <th><i class="fa fa-bookmark"></i> ID du capteur</th>
                               <th><i class="fa fa-edit"></i> Statut</th>
                               <th><i class="fa fa-cogs"></i> Modification</th>
                             </tr>
@@ -599,33 +600,13 @@
                           <tbody id="tabBody">
                             <tr>
                               <td>19/12/2022</td>
-                              <td><a href="#">Bassin</a></td>
-                              <td class="hidden-phone">Capteur du bassin principal</td>
-                              <td>28-25c26a54d3e8</td>
-                              <td><span class="label label-success label-mini">OK</span></td>
+                              <td>28-25c26aff5dfc</td>
+                              <td class="hidden-phone">Capteur sous la serre (Exemple)</td>
+                              <td><a href="#myModal" data-toggle="modal" data-target="#myModal">Serre</a> (Exemple)</td>
+                              <td><span class="label label-danger label-mini">KO</span></td>
                               <td>
                                 <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal"><i
                                     class="fa fa-pencil"></i></button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>19/12/2022</td>
-                              <td><a href="#">Exterieur</a></td>
-                              <td class="hidden-phone">Capteur exterieur</td>
-                              <td>28-25c269ff10b5</td>
-                              <td><span class="label label-success label-mini">OK</span></td>
-                              <td>
-                                <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>19/12/2022</td>
-                              <td><a href="#">Serre</a></td>
-                              <td class="hidden-phone">Capteur sous la serre</td>
-                              <td>28-25c26aff5dfc</td>
-                              <td><span class="label label-danger label-mini">KO</span></td>
-                              <td>
-                                <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
                               </td>
                             </tr>
 
@@ -643,45 +624,49 @@
                                 aria-hidden="true">&times;</button>
                               <h4 class="modal-title" id="myModalLabel">Capteur : nomduCapteur </h4>
                             </div>
-                            <div class="modal-body">
-                              Saisir les informations manquantes afin de proceder à l'enregistrement du capteur dans la
-                              base de donnée
-                              <br><br>
-                              <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">ID capteur</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="idCapteur" class="form-control" disabled>
-                                </div>
-                              </div><br><br>
-                              <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Date d'enregistrement</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="dateEnreg" class="form-control" disabled>
-                                </div>
-                              </div><br><br>
-                              <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Nom du capteur</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="nomCapteur" class="form-control">
-                                </div>
-                              </div><br><br>
-                              <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Descriptif</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="descriptif" class="form-control">
-                                </div>
-                              </div><br><br>
-                              <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Temperature</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="temperature" class="form-control" disabled>
-                                </div>
-                              </div><br><br>
-                            </div> <!---Fin du body du modal-->
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                              <button type="button" class="btn btn-primary">Enregister</button>
-                            </div>
+                            <form action="post" method="">
+                              <div class="modal-body">
+                                Saisir les informations manquantes afin de proceder à l'enregistrement du capteur dans
+                                la
+                                base de donnée
+                                <br><br>
+
+                                <div class="form-group">
+                                  <label class="col-sm-2 col-sm-2 control-label">ID capteur</label>
+                                  <div class="col-sm-10">
+                                    <input type="text" name="idCapteur" class="form-control" disabled>
+                                  </div>
+                                </div><br><br>
+                                <div class="form-group">
+                                  <label class="col-sm-2 col-sm-2 control-label">Date d'enregistrement</label>
+                                  <div class="col-sm-10">
+                                    <input type="text" name="dateEnreg" class="form-control" disabled>
+                                  </div>
+                                </div><br><br>
+                                <div class="form-group">
+                                  <label class="col-sm-2 col-sm-2 control-label">Nom du capteur</label>
+                                  <div class="col-sm-10">
+                                    <input type="text" name="nomCapteur" class="form-control">
+                                  </div>
+                                </div><br><br>
+                                <div class="form-group">
+                                  <label class="col-sm-2 col-sm-2 control-label">Descriptif</label>
+                                  <div class="col-sm-10">
+                                    <input type="text" name="descriptif" class="form-control">
+                                  </div>
+                                </div><br><br>
+                                <div class="form-group">
+                                  <label class="col-sm-2 col-sm-2 control-label">Temperature</label>
+                                  <div class="col-sm-10">
+                                    <input type="text" name="temperature" class="form-control" disabled>
+                                  </div>
+                                </div><br><br>
+                              </div> <!---Fin du body du modal-->
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                                <button type="button" class="btn btn-primary">Enregister</button>
+                              </div>
+                            </form>
                           </div>
                         </div>
                       </div>
@@ -716,99 +701,74 @@
                   </div>
                   <!-- /tab-pane -->
                   <div id="editProfile" class="tab-pane">
-                    <!--<div class="row">-->
-                    <!-- debut description -->
-                    <div class="col-lg-8 col-lg-offset-2 detailed">
-                      <textarea rows="3" class="form-control"
-                        placeholder="Une brève déscription de vous et/ou de votre installation"></textarea>
-                      <div class="grey-style">
-                        <div class="pull-right">
-                          <button class="btn btn-sm btn-theme03">Valider</button>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- fin description -->
-                    <!-- debut Info Perso -->
-                    <div class="col-md-6 detailed">
-                      <h4 class="mb">Information Personnelle</h4>
-                      <form role="form" class="form-horizontal">
-                        <div class="form-group">
-                          <label class="col-lg-2 control-label"> Photo de profil</label>
-                          <div class="col-lg-6">
-                            <input type="file" id="exampleInputFile" class="file-pos">
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="col-lg-2 control-label">Date d'arrivée</label>
-                          <div class="col-lg-6">
-                            <input class="form-control form-control-inline input-medium default-date-picker" size="16"
-                              type="date" value="">
-
-                            <class="form-control">
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label class="col-lg-2 control-label">Description </label>
-                          <div class="col-lg-10">
-                            <textarea rows="4" cols="30" class="form-control" id="" name=""></textarea>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                    <!-- fin Info Perso -->
-                    <!-- debut Contact Perso -->
-                    <div class="col-md-6 detailed">
-                      <h4 class="mb">Contact Personnel</h4>
+                    <div class="row">
+                      <!-- debut description -->
                       <form role="form" method="post" class="form-horizontal">
-                        <div class="form-group">
-                          <label class="col-lg-2 control-label">Nom</label>
-                          <div class="col-lg-6">
-                            <input type="text" placeholder=" " id="name" class="form-control">
-                          </div>
+                        <div class="col-lg-8 col-lg-offset-2 detailed">
+                          <textarea rows="3" class="form-control"
+                            placeholder="Une brève déscription de vous et/ou de votre installation"></textarea>
                         </div>
-                        <div class="form-group">
-                          <label class="col-lg-2 control-label">Prénom</label>
-                          <div class="col-lg-6">
-                            <input type="text" placeholder=" " id="firstname" class="form-control">
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="col-lg-2 control-label">Adresse</label>
-                          <div class="col-lg-6">
-                            <input type="text" placeholder=" " id="addr" class="form-control">
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="col-lg-2 control-label">Ville</label>
-                          <div class="col-lg-6">
-                            <input type="text" placeholder=" " id="city" class="form-control">
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="col-lg-2 control-label">Pays</label>
-                          <div class="col-lg-6">
-                            <input type="text" placeholder=" " id="country" class="form-control">
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="col-lg-2 control-label">Téléphone</label>
-                          <div class="col-lg-6">
-                            <input type="text" placeholder=" " id="phone" class="form-control">
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="col-lg-2 control-label">E-mail</label>
-                          <div class="col-lg-6">
-                            <input type="text" placeholder=" " id="email" class="form-control">
-                          </div>
-                        </div>
+                        <br><br>
+                        <!-- fin description -->
 
-                        <div class="form-group">
-                          <div class="col-lg-offset-2 col-lg-10">
-                            <button class="btn btn-theme" type="submit">Sauvegarder</button>
+                        <!-- debut Contact Perso -->
+                        <div class="col-md-6 detailed">
+                          <h4 class="mb">Contact Personnel</h4>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Date d'arrivée</label>
+                            <div class="col-lg-6">
+                              <input class="form-control form-control-inline input-medium default-date-picker" size="16"
+                                type="date" value="">
+                            </div>
                           </div>
-                        </div>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Nom</label>
+                            <div class="col-lg-6">
+                              <input type="text" placeholder=" " id="name" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Prénom</label>
+                            <div class="col-lg-6">
+                              <input type="text" placeholder=" " id="firstname" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Adresse</label>
+                            <div class="col-lg-6">
+                              <input type="text" placeholder=" " id="addr" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Ville</label>
+                            <div class="col-lg-6">
+                              <input type="text" placeholder=" " id="city" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Pays</label>
+                            <div class="col-lg-6">
+                              <input type="text" placeholder=" " id="country" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Téléphone</label>
+                            <div class="col-lg-6">
+                              <input type="text" placeholder=" " id="phone" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">E-mail</label>
+                            <div class="col-lg-6">
+                              <input type="text" placeholder=" " id="email" class="form-control">
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <div class="col-lg-offset-6">
+                              <button class="btn btn-theme" type="submit">Sauvegarder</button>
+                            </div>
+                          </div>
                       </form>
                     </div>
                     <!-- FIN Contact Perso -->
@@ -861,7 +821,7 @@
   <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
   <!--common script for all pages-->
   <script src="lib/common-scripts.js"></script>
-  <script src="../js/profile.js"></script>
+  <script src="./js/profile.js"></script>
 </body>
 
 </html>

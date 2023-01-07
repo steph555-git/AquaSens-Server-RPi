@@ -2,9 +2,10 @@ const mongoose = require('mongoose')
 const passportLocalStrategy = require('passport-local-mongoose')
 
 const userSchema = new mongoose.Schema({
-    username: String,
-    password: String
-   
+  username: String,
+  password: String,
+  crea: Date
+
 })
 
 userSchema.plugin(passportLocalStrategy)
@@ -14,15 +15,18 @@ module.exports = mongoose.model("User", userSchema)
 
 
 //function padTo2Digits(num) {
-//    return num.toString().padStart(2, '0')
+
+//  return num.toString().padStart(2, '0')
 //}
-//  
+//
 //function formatDate(date) {
-//    return [
-//      padTo2Digits(date.getDate()),
-//      padTo2Digits(date.getMonth() + 1),
-//      date.getFullYear(),
-//    ].join('/')
+
+//  return [
+
+//    padTo2Digits(date.getDate()),
+//    padTo2Digits(date.getMonth() + 1),
+//    date.getFullYear(),
+//  ].join('/')
 //}
 
-  // formatDate(new Date())
+// formatDate(new Date())
