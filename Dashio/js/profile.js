@@ -63,7 +63,7 @@ function analyse() {
                         var arrayColonnes = arrayLignes[k].cells
                         // recup de la cellule de la bonne ligne
                     arrayColonnes[4].innerHTML =  '<span class="label label-danger label-mini">Non enregistré</span>'
-                    arrayColonnes[5].innerHTML = '<button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil"></i></button>'
+                    arrayColonnes[5].innerHTML = '<button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" data-id="' + objCapteur.id +'><i class="fa fa-pencil"></i></button>'
                     }
                     
                 })
