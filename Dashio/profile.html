@@ -431,7 +431,7 @@
 
                         <div class="form-panel">
                           <h3><i class="fa fa-angle-right"></i> Taille du bassin</h3>
-                          <form class="form-horizontal style-form" action="profile.html" method="POST">
+                          <form class="form-horizontal style-form" action="/api/install" method="POST">
                             <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Longueur</label>
                               <div class="col-sm-10">
@@ -537,13 +537,13 @@
                     <h4>Pending Tasks</h4>
                     <div class="row ">
                       gdfgdfgdfg<br>
-                        dfgdfgdg
-                      
+                      dfgdfgdg
+
                       <!-- /col-md-8 -->
-                    </div>
-                    <!-- /row -->
-                  </div>
-                  <!-- /tab-pane -->
+                    </div><!-- /row -->
+
+                  </div><!-- /tab-pane -->
+
                   <div id="capteurs" class="tab-pane">
                     <div class="row">
                       <div class="content-panel">
@@ -666,14 +666,15 @@
                       </div>
 
                     </div>
-                  </div>
-                  <!-- /tab-pane -->
+                  </div><!-- /tab-pane -->
+
                   <div id="editProfile" class="tab-pane">
                     <div class="row">
-                      <!-- debut description -->
-                      <form role="form" method="post" class="form-horizontal">
+
+                      <form role="form" action="/api/userprofil" method="POST" class="form-horizontal">
+                        <!-- debut description -->
                         <div class="col-lg-8 col-lg-offset-2 detailed">
-                          <textarea rows="3" class="form-control"
+                          <textarea rows="3" id="descriptionUserProfile" class="form-control"
                             placeholder="Une brève déscription de vous et/ou de votre installation"></textarea>
                         </div>
                         <br><br>
@@ -681,73 +682,82 @@
 
                         <!-- debut Contact Perso -->
                         <div class="col-md-6 detailed">
-                          <h4 class="mb">Contact Personnel</h4>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Date d'arrivée</label>
-                            <div class="col-lg-6">
-                              <input class="form-control form-control-inline input-medium default-date-picker" size="16"
-                                type="date" value="">
+                          <div class="detailed mt">
+                            <h4 class="mb">Contact Personnel</h4>
+                            <div class="form-group">
+                              <label class="col-lg-3 control-label">Date d'arrivée</label>
+                              <div class="col-lg-8">
+                                <input class="form-control form-control-inline input-medium default-date-picker"
+                                  name="dateEntree" size="16" type="date" value="">
+                              </div>
                             </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Nom</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="name" class="form-control">
+                            <div class="form-group">
+                              <label class="col-lg-3 control-label">Nom</label>
+                              <div class="col-lg-8">
+                                <input type="text" placeholder=" " name="name" class="form-control">
+                              </div>
                             </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Prénom</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="firstname" class="form-control">
+                            <div class="form-group">
+                              <label class="col-lg-3 control-label">Prénom</label>
+                              <div class="col-lg-8">
+                                <input type="text" placeholder=" " name="firstname" class="form-control">
+                              </div>
                             </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Adresse</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="addr" class="form-control">
+                            <div class="form-group">
+                              <label class="col-lg-3 control-label">Adresse</label>
+                              <div class="col-lg-8">
+                                <input type="text" placeholder=" " name="addr" class="form-control">
+                              </div>
                             </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Ville</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="city" class="form-control">
+                            <div class="form-group">
+                              <label class="col-lg-3 control-label">Code Postal</label>
+                              <div class="col-lg-8">
+                                <input type="text" placeholder=" " name="poBox" class="form-control">
+                              </div>
                             </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Pays</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="country" class="form-control">
+                            <div class="form-group">
+                              <label class="col-lg-3 control-label">Ville</label>
+                              <div class="col-lg-8">
+                                <input type="text" placeholder=" " name="city" class="form-control">
+                              </div>
                             </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Téléphone</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="phone" class="form-control">
+                            <div class="form-group">
+                              <label class="col-lg-3 control-label">Pays</label>
+                              <div class="col-lg-8">
+                                <input type="text" placeholder=" " name="country" class="form-control">
+                              </div>
                             </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">E-mail</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="email" class="form-control">
+                            <div class="form-group">
+                              <label class="col-lg-3 control-label">Téléphone</label>
+                              <div class="col-lg-8">
+                                <input type="text" placeholder=" " name="phone" class="form-control">
+                              </div>
                             </div>
-                          </div>
+                            <div class="form-group">
+                              <label class="col-lg-3 control-label">E-mail</label>
+                              <div class="col-lg-8">
+                                <input type="text" placeholder=" " name="email" class="form-control">
+                              </div>
+                            </div>
 
-                          <div class="form-group">
-                            <div class="col-lg-offset-6">
-                              <button class="btn btn-theme" type="submit">Sauvegarder</button>
+                            <div class="form-group">
+                              <div class="col-lg-offset-6">
+                                <button class="btn btn-theme" type="submit">Sauvegarder</button>
+                              </div>
                             </div>
                           </div>
+                        </div>
                       </form>
-                    </div>
-                    <!-- FIN Contact Perso -->
-                  </div>
-                  <!-- /row -->
-                </div>
-                <!-- /tab-pane -->
-              </div>
-              <!-- /tab-content -->
+                    </div><!-- /row -->
+
+                  </div><!-- /tab-pane -->
+                  <!-- FIN Contact Perso -->
+                </div><!-- /tab-content -->
+
+              </div><!-- /panel-body -->
+
             </div>
-            <!-- /panel-body -->
+
           </div>
           <!-- /col-lg-12 -->
         </div>

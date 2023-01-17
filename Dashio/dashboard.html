@@ -378,52 +378,33 @@
             <div class="border-head">
               <h3>TEMPERATURES</h3>
             </div>
-            <div class="custom-bar-chart">
-              <ul class="y-axis">
-                <li><span>10.000</span></li>
-                <li><span>8.000</span></li>
-                <li><span>6.000</span></li>
-                <li><span>4.000</span></li>
-                <li><span>2.000</span></li>
-                <li><span>0</span></li>
-              </ul>
-              <div class="bar">
-
-                <div class="title">JAN</div>
-                <div class="value tooltips" data-original-title="8.500" data-toggle="tooltip" data-placement="top">85%
-                </div>
-              </div>
-              <div class="bar ">
-                <div class="title">FEB</div>
-                <div class="value tooltips" data-original-title="5.000" data-toggle="tooltip" data-placement="top">50%
-                </div>
-              </div>
-              <div class="bar ">
-                <div class="title">MAR</div>
-                <div class="value tooltips" data-original-title="6.000" data-toggle="tooltip" data-placement="top">60%
-                </div>
-              </div>
-              <div class="bar ">
-                <div class="title">APR</div>
-                <div class="value tooltips" data-original-title="4.500" data-toggle="tooltip" data-placement="top">45%
-                </div>
-              </div>
-              <div class="bar">
-                <div class="title">MAY</div>
-                <div class="value tooltips" data-original-title="3.200" data-toggle="tooltip" data-placement="top">32%
-                </div>
-              </div>
-              <div class="bar ">
-                <div class="title">JUN</div>
-                <div class="value tooltips" data-original-title="6.200" data-toggle="tooltip" data-placement="top">62%
-                </div>
-              </div>
-              <div class="bar">
-                <div class="title">JUL</div>
-                <div class="value tooltips" data-original-title="7.500" data-toggle="tooltip" data-placement="top">75%
-                </div>
-              </div>
+            <!--<div>
+              <canvas id="myChart"></canvas>
             </div>
+            <script>
+              const ctx = document.getElementById('myChart')
+
+              new Chart(ctx, {
+                type: 'bar',
+                data: {
+                  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                  datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                  }]
+                },
+                options: {
+                  scales: {
+                    y: {
+                      beginAtZero: true
+                    }
+                  }
+                }
+              })
+
+            </script> -->
+
             <!--custom chart end-->
             <div class="row mt">
               <!-- SERVER STATUS PANELS -->
@@ -689,8 +670,7 @@
                           <p id="atm">Pression athmospherique : </p>
                         </div>
                         <div class="iconMeteo">
-                          <img id="imageMeteo" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu1.webp"
-                            width="100px">
+                          <img id="imageMeteo" src="" width="100px">
                         </div>
                       </div>
                     </div>
@@ -717,9 +697,9 @@
                             tempMeteo.innerHTML = data.current.temp_c + "&#176;"
                             condMeteo.textContent = data.current.condition.text
                             imageMeteo.src = data.current.condition.icon
-                            humidity.textContent =  "Humidité : " + data.current.humidity + " %"
-                            wind.textContent =  "Vent : " + data.current.wind_kph + " km/h"
-                            atm.textContent =  "Pression : " + data.current.pressure_mb + " hPa"
+                            humidity.textContent = "Humidité : " + data.current.humidity + " %"
+                            wind.textContent = "Vent : " + data.current.wind_kph + " km/h"
+                            atm.textContent = "Pression : " + data.current.pressure_mb + " hPa"
                           })
                       })
                   </script>
@@ -878,7 +858,7 @@
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="lib/jquery/jquery.min.js"></script>
 
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="lib/bootstrap/css/bootstrap.min.css"></script>
   <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
   <script src="lib/jquery.scrollTo.min.js"></script>
   <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
@@ -890,6 +870,7 @@
   <!--script for this page-->
   <script src="lib/sparkline-chart.js"></script>
   <script src="lib/zabuto_calendar.js"></script>
+
   <script type="text/javascript">
     $(document).ready(function () {
       var unique_id = $.gritter.add({

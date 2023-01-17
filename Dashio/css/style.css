@@ -1261,6 +1261,7 @@ PANELS CONFIGURATIONS
 .card {
     width: 380px;
     background-color: #f8f8f8;
+    height: 260px;
 }
 
 .headerMeteo {
@@ -1286,6 +1287,10 @@ PANELS CONFIGURATIONS
     display: flex;
     justify-content: space-between;
     align-items: center;
+    opacity: 0.6;
+}
+.detailsMeteo{
+   
 }
 .detailsMeteo p {
     display: flex;
@@ -1293,10 +1298,10 @@ PANELS CONFIGURATIONS
     margin: -2px;
     padding-left: 10px;
 }
+
 .iconMeteo img {
     padding-right: 20px;
     display: flex;
-
 }
 
 @media screen and (max-width: 400px) {

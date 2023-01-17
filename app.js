@@ -26,6 +26,8 @@ app.use(flash())
 //Gestion model de données
 const User = require("./models/user")
 const Reset = require("./models/reset")
+const Installation = require("./models/installation")
+const UserProfil = require("./models/userprofile")
 
 //Gestion de toutes les routes (Non authentification)
 const routes = require('./routes/routes')
@@ -242,18 +244,80 @@ app.post('/reset/:token', (req, res) => {
     })
 })
 
-app.route("/api/sensors")
-    .get((req, res) => {
-        (async () => {
-            //date format DD/MM/YY
-            //formatDate(new Date())
-            const resp = await getSensorsList()
-            console.log("Sensors List :: ", resp);
-            res.send(resp)
-        })()
+//app.route("/api/sensors")
+//    .get((req, res) => {
+//        (async () => {
+//            //date format DD/MM/YY
+//            //formatDate(new Date())
+//            const resp = await getSensorsList()
+//            console.log("Sensors List :: ", resp);
+//            res.send(resp)
+//        })()
+//
+//    })
+app.route("/api/install")
+    .post((req, res) => {
+        const newInstallation = new Installation({
+            tailleBassin: {
+                longueurBassin: req.body.longueurBassin,
+                largeurBassin: req.body.largeurBassin,
+                profondeurBassin: req.body.profondeurBassin
+            },
+            filtrationBio: {
+                longueurFiltre: req.body.longueurFiltre,
+                largeurFiltre: req.body.largeurFiltre,
+                profondeurFiltre: req.body.profondeurFiltre
+            },
+            Materiel: {
+                pompeEau: req.body.pompeEau,
+                filtre: req.body.filtre,
+                pompeAir: req.body.pompeAir
+            }
+        })
+        newInstallation.save((err) => {
+            if (err) {
+                console.log("Probleme lors de l'enregistrement de l'installation")
+                console.log(err)
+            } else {
+                console.log("Installation sauvgardée avec succès")
+                res.redirect("../profile.html")
+
+            }
+
+        })
 
     })
+app.route("/api/userprofil")
+    .post((req, res) => {
+        const newUserProfil = new UserProfil({
+            dateEntree: req.body.dateEntree,
+            name: req.body.name,
+            firstname: req.body.firstname,
+            adress: req.body.adress,
+            poBox: req.body.poBox,
+            city: req.body.city,
+            country: req.body.country,
+            phone: req.body.phone,
+            email: req.body.email,
+            descriptionUserProfile: req.body.descriptionUserProfile
+        })
+        newUserProfil.save((err) => {
+            if (err) {
+                console.log("Probleme lors de l'enregistrement du profil utilisateur")
+                console.log(err)
+            } else {
+                console.log("Le profile utilisateur a été sauvgardé avec succès")
+                res.redirect("../profile.html")
 
+            }
+        })
+    })
+
+//app.route("/profile.html")
+//    .get((req, res) => {
+//        //Verifier s'il y a un enregistement pour l'installation
+//        //Verifier s'il y a un enregistrement pour le profil (nom, prenom, etc)
+//    })
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {

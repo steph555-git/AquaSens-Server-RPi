@@ -1,12 +1,19 @@
-const Router = require('express')
-const router = Router.Router()
+const express = require('express')
+const router = express.Router()
+
+// Require du paquet passport
 const passport = require('passport')
 
+const getSensorsList = require('../html/js/callSensors')
+
 const Installation = require('../models/installation')
+
+
 const bodyParser = require('body-parser')
 const dotenv = require('dotenv'); dotenv.config()
 
-router.use(Router.json())
+
+router.use(Routers.json())
 router.use(bodyParser.urlencoded({ extended: false }))
 
 //Passport
@@ -14,21 +21,17 @@ router.use(passport.initialize())
 router.use(passport.session())
 
 
-//router.route("/api/sensors")
-//    .get((req, res) => {
-//        console.log("COUCOU")
-//        res.send("access OK")
-//    })
+router.route("/api/sensors")
+    .get((req, res) => {
+        (async () => {
+            //date format DD/MM/YY
+            //formatDate(new Date())
+            const resp = await getSensorsList()
+            console.log("Sensors List :: ", resp);
+            res.send(resp)
+        })()
 
-//console.log(installation)
-//res.status(201).json({message : 'Installation enregistrée'})
-//installation.save()
-//    .then(() => res.status(201).json({message : 'Installation enregistrée'}))
-//    .catch((error) => res.status(400).json({error}))
-
-//router.get("/profile.html",isLoggedIn,(req,res) => {
-//    console.log("test")
-//})
+    })
 
 
 function isLoggedIn(req, res, next) {

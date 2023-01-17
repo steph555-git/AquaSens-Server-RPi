@@ -21,11 +21,6 @@ function analyse() {
 
                         let objCapteur = data[i]
 
-                        //transformation objet en tableau
-                        //var tableau = Object.keys(resul).map(function (cle) {
-                        //    return [(cle), resul[cle]]
-                        //})
-
                         var cell = document.createElement("td")
                         var cellDate = document.createTextNode(objCapteur.date)
                         cell.appendChild(cellDate)
@@ -62,10 +57,10 @@ function analyse() {
                     for (var k = 1; k <= arrayLignes.length; k++) {
                         var arrayColonnes = arrayLignes[k].cells
                         // recup de la cellule de la bonne ligne
-                    arrayColonnes[4].innerHTML =  '<span class="label label-danger label-mini">Non enregistré</span>'
-                    arrayColonnes[5].innerHTML = '<button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" data-id="' + objCapteur.id +'><i class="fa fa-pencil"></i></button>'
+                        arrayColonnes[4].innerHTML = '<span class="label label-danger label-mini">Non enregistré</span>'
+                        arrayColonnes[5].innerHTML = '<button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" data-id="' + objCapteur.id + '><i class="fa fa-pencil"></i></button>'
                     }
-                    
+
                 })
         })
 
