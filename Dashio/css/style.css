@@ -1013,12 +1013,14 @@ PANELS CONFIGURATIONS
 .darkblue-panel {
     text-align: center;
     background: #444c57;
+
 }
 
 .darkblue-panel .darkblue-header {
+
     background: transparent;
-    padding: 3px;
-    margin-bottom: 15px;
+    padding: 1px;
+    margin-bottom: 10px;
 }
 
 .darkblue-panel h1 {
@@ -1045,6 +1047,7 @@ PANELS CONFIGURATIONS
 .green-panel {
     text-align: center;
     background: #4ECDC4;
+    height: 280px;
 }
 
 .green-panel .green-header {
@@ -1265,33 +1268,42 @@ PANELS CONFIGURATIONS
 }
 
 .headerMeteo {
+    margin-top: -10px;
     display: flex;
     justify-content: space-between;
+    color: white;
 }
 
 #villeMeteo {
     padding-left: 10px;
-}
-#heureMeteo {
-    padding-right: 10px;
+    color: white;
 }
 
-#tempMeteo{
-    font-weight:700;
-    font-size: 50px;
+#heureMeteo {
+    padding-right: 10px;
+    color: white;
 }
+
+#tempMeteo {
+    font-weight: 700;
+    font-size: 50px;
+    color: rgb(206, 206, 206);
+    ;
+}
+
 #condMeteo {
     text-align: center;
 }
-.footerMeteo{
+
+.footerMeteo {
     display: flex;
     justify-content: space-between;
     align-items: center;
     opacity: 0.6;
 }
-.detailsMeteo{
-   
-}
+
+.detailsMeteo {}
+
 .detailsMeteo p {
     display: flex;
     text-align: left;
