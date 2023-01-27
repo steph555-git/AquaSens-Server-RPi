@@ -1,14 +1,14 @@
 const mongoose = require('mongoose')
-const passportLocalStrategy = require('passport-local-mongoose')
+const uniqueValidator = require('mongoose-unique-validator')
 
 const userSchema = new mongoose.Schema({
-  username: String,
-  password: String,
-  crea: Date
+  username: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  dateCrea: { type: String, required: true }
 
 })
 
-userSchema.plugin(passportLocalStrategy)
+userSchema.plugin(uniqueValidator)
 
 module.exports = mongoose.model("User", userSchema)
 
