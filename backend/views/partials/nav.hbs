@@ -1,0 +1,81 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="/" class="brand-link">
+      <img src="../plugins/dist/img/AdminLTELogo.png" alt="AquaSensLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">AquaSENS</span>
+    </a>
+<div class="sidebar">
+  <!-- Sidebar user panel (optional) -->
+  <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+    <div class="image">
+      <img src="../plugins/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+    </div>
+    <div class="info">
+      <a href="profile" class="d-block">{{ resultsGETQuery.general.firstname }} {{resultsGETQuery.general.name}}</a>
+    </div>
+  </div>
+  <!-- SidebarSearch Form -->
+  <div class="form-inline">
+    <div class="input-group" data-widget="sidebar-search">
+      <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+      <div class="input-group-append">
+        <button class="btn btn-sidebar">
+          <i class="fas fa-search fa-fw"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <nav class="mt-2">
+    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+      <li class="nav-item menu-open">
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="/" class="{{#if active_Dashboard}}active{{/if}} nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../map" class="{{#if active_Map}}active{{/if}} nav-link">
+              <i class="nav-icon fas fa-duotone fa-map-pin"></i>
+              <p>Map</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../profile" class="{{#if active_Profile}}active{{/if}} nav-link">
+              <i class="nav-icon fas fa-regular fa-user"></i>
+              <p>Profile</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../charts" class="{{#if active_Charts}}active{{/if}} nav-link">
+              <i class="nav-icon fas fa-solid fa-chart-line"></i>
+              <p>Charts</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../calendar" class="{{#if active_Calendar}}active{{/if}} nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>Calendar
+                <span class="badge badge-info right">2</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../contacts" class="{{#if active_Contacts}}active{{/if}} nav-link">
+              <i class="nav-icon fa-regular fa-address-card"></i>
+              <p>Contacts</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../contact-us" class="{{#if active_Contact-us}}active{{/if}} nav-link">
+              <i class="nav-icon fas fa-regular fa-message"></i>
+              <p>Contact us</p>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+    </div>
+</aside>
