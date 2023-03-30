@@ -17,7 +17,7 @@ const getSensorsList = () => {
     }
 }
 
-const getDataSensorsAPI = async (req, res) => {
+const getDataTemperature = async (req, res) => {
     try {
         const listDs18b20Sensors = await getSensorsList()
 
@@ -28,13 +28,12 @@ const getDataSensorsAPI = async (req, res) => {
                 "temperature": ds18b20.temperatureSync(id)
             }
         })
-        res.status(200).send(sensorsList)
-        console.log('API Called - data sent')
+        return sensorsList
     } catch (error) {
         console.log(error)
-        res.status(500).send(error)
+        return error 
     }
 
 }
 
-module.exports = getDataSensorsAPI
+module.exports = getDataTemperature

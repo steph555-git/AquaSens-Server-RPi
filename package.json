@@ -17,7 +17,11 @@
   },
   "homepage": "https://github.com/steph555-git/AquaSens-Server-RPi#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "ds18b20": "^0.1.0",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "socket.io": "^4.6.1",
+    "socket.io-client": "^4.6.1"
   }
 }
