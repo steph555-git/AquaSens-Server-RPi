@@ -29,7 +29,7 @@ io.on('connection', async (socket) => {
     setInterval(async () => {
         socket.emit('data', { sensors: await dataTemp() })
         console.log(await dataTemp())
-    }, 2000)
+    }, 5000)
 })
 
 server.listen(4000, () => console.log(`server is listening on port ${port}`))
