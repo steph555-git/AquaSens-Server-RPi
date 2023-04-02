@@ -29,15 +29,14 @@ const getQueryFullName = async () => {
         const captation = database.collection("captation")
 
         await captation.insertOne(dataTemp)
-        fs.appendFile(__dirname + '/logs/log.txt', '\n' + presentDate() + ' Data temperature sent to database mongoDB', (err) => {
+        fs.appendFile(__dirname + '/logs/log.txt', '\n' + presentDate() + '  Data temperature sent to database mongoDB', (err) => {
             if (err) throw err
         })
     }
     catch (e) {
-        fs.appendFile(__dirname + '/logs/log.txt', '\n' + presentDate() + ' ' + e.message, (err) => {
+        fs.appendFile(__dirname + '/logs/log.txt', '\n' + presentDate() + '  ' + e.message, (err) => {
             if (err) throw err
         })
-        console.log('error')
     }
     finally {
         await dataTemperature.close()
