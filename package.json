@@ -1,0 +1,29 @@
+{
+  "name": "html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steph555-git/AquaSens-Server-RPi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/steph555-git/AquaSens-Server-RPi/issues"
+  },
+  "homepage": "https://github.com/steph555-git/AquaSens-Server-RPi#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ds18b20": "^0.1.0",
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "mongodb": "^5.1.0",
+    "socket.io": "^4.6.1",
+    "socket.io-client": "^4.6.1"
+  }
+}
