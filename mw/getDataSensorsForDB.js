@@ -20,12 +20,12 @@ const getSensorsList = () => {
 const getDataTemperature = async (req, res) => {
     try {
         const listDs18b20Sensors = await getSensorsList()
-        let sensorsList = {}
-        listDs18b20Sensors.forEach((id, i) => {
-            sensorsList[(i + 1)] = {
+        let sensorsList = listDs18b20Sensors.map((id, i) => {
+            return {
                 "id": id,
                 "name": `Sensor${i + 1}`,
-                "temperature": ds18b20.temperatureSync(id)
+                "temperature": ds18b20.temperatureSync(id),
+                "unit": "C"
             }
         })
         return {
